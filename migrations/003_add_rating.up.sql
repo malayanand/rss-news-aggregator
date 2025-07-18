@@ -1,0 +1,2 @@
+ALTER TABLE articles
+ADD COLUMN rating TEXT;
