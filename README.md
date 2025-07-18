@@ -2,10 +2,12 @@
 
 This service periodically fetches Indian news headlines from several RSS feeds, scrapes each article for a short summary and stores the results in PostgreSQL. A small NLP service rates articles using a zero-shot classifier.
 
-## Quick start
+## Setup
 
-1. `docker-compose up --build` – starts Postgres, runs migrations, the NLP service and the API.
-2. Access the API at `http://localhost:8080`.
+1. Install Docker and Docker Compose.
+2. Clone this repository and open the project directory.
+3. Run `docker-compose up --build` to build images, run migrations and start all services.
+4. Once the containers are running, visit `http://localhost:8080` to access the API.
 
 ### Endpoints
 
@@ -15,7 +17,3 @@ This service periodically fetches Indian news headlines from several RSS feeds, 
 
 The ingestor also runs hourly via the scheduler.
 
-## Environment
-
-- `DATABASE_URL` – connection string for Postgres.
-- `CLASSIFIER_URL` – URL of the NLP classification service (default `http://localhost:8000`).
